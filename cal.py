@@ -3,13 +3,13 @@ from tkinter import *
 import math
 import parser
 import tkinter.messagebox
+import sys
 
 root = Tk()
 root.title("Scientific Calculator")
 root.configure(background = 'white')
 root.resizable(width=False, height=False)
 root.geometry("480x568+450+90")
-#root.iconbitmap(r'D:\A Electrical Engineering Data\1st Semester\Python\Spyder\Lab\Calculator\Wwalczyszyn-Android-Style-Honeycomb-Calculator.ico')
 
 calc = Frame(root)
 calc.grid()
@@ -193,6 +193,12 @@ class Calc():
         self.result = False
         self.current = math.log1p(float(txtDisplay.get()))
         self.display(self.current)
+        
+    def exit_(self):
+        self.result = False
+        self.current = "Exiting"
+        sys.exit()
+        self.display(self.current)
 
 added_value = Calc()
 
@@ -220,7 +226,6 @@ for j in range(2,5):
         btn[i]["command"]=lambda x=numberpad[i]:added_value.numberEnter(x)
         i+=1
         
-# ====================================================================================================== #
 
 # Here is the code for Button of Standard Calulator.
 
@@ -261,8 +266,6 @@ btnPM = Button(calc, text=chr(177),width=6, height=2,bg='black',fg='white', font
 
 btnEquals = Button(calc, text="=",width=6, height=2,bg='black',fg='white', font=('Helvetica',20,'bold'),
                   bd=4,command=added_value.sum_of_total).grid(row=5, column= 3, pady = 1)
-
-# ===================================================================================================== #
 
 # Here is the code for Buttons of Scientific Calulator.
 
