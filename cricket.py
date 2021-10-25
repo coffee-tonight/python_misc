@@ -3,7 +3,7 @@ each_ball = []
 def cricket(run):
     c_run = 0
     try:
-        c_run = (input("Runs In This Ball-"))
+        c_run = (input("Runs scored in this delivery-"))
         
         each_ball.append(int(c_run))
         print(each_ball)

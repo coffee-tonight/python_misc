@@ -1,6 +1,6 @@
 # Install Git in this pc from your phone....
 # Let's first try to achieve the fibonacci sequence
-n = int(input("Till what number do you want to calculate?"))
+n = int(input("Input the number uptill which the series will continue"))
 series = [0, 1]
 
 def fib(n):
